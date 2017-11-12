@@ -1,0 +1,29 @@
+\documentclass[letterpaper,12pt]{report}
+
+\usepackage[american]{babel}
+\usepackage{csquotes}
+\usepackage[backend=biber,style=apa]{biblatex}
+\usepackage{parskip}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{siunitx}
+\usepackage[hidelinks]{hyperref}
+
+\DeclareLanguageMapping{american}{american-apa}
+
+\title{Time Travelling to Avoid Trump\\\Large A Mathematical Analysis}
+\author{Vincent Macri \and David White \and Aviv Haber}
+\date{November 22, 2017}
+
+\addbibresource{../References.bib}
+
+\begin{document}
+	\pagenumbering{gobble}
+	\maketitle
+	\include{Abstract}
+	\tableofcontents
+	\clearpage
+	\pagenumbering{arabic}
+	\include{TwinParadox}
+	\printbibliography
+\end{document}

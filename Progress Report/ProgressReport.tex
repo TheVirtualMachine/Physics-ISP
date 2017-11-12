@@ -1,0 +1,34 @@
+\documentclass[letterpaper,12pt]{report}
+
+\usepackage[american]{babel}
+\usepackage[style=apa]{biblatex}
+\usepackage{parskip}
+\usepackage[margin=1in]{geometry}
+\usepackage{siunitx}
+\usepackage{titlesec}
+\usepackage[hidelinks]{hyperref}
+
+\DeclareLanguageMapping{american}{american-apa}
+
+\titlespacing*{\chapter}{0pt}{-25pt}{20pt}
+\titleformat{\chapter}[display]{\Huge\bfseries}{\chaptertitlename{} \thechapter}{10pt}{\LARGE}
+
+\titlespacing*{\section}{0pt}{10pt}{10pt} \frenchspacing
+
+\title{Time Travelling to Avoid Trump\\\Large Progress Report}
+\author{Vincent Macri \and David White \and Aviv Haber}
+\date{October 11, 2017}
+
+\addbibresource{../References.bib}
+
+\begin{document}
+	\pagenumbering{gobble}
+	\maketitle
+	\tableofcontents
+	\clearpage
+	\pagenumbering{arabic}
+	\include{Summary}
+	\include{Analysis}
+	\include{WorkEqualization}
+	\printbibliography
+\end{document}
