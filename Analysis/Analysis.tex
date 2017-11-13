@@ -1,29 +1,35 @@
 \documentclass[letterpaper,12pt]{report}
 
+\usepackage{parskip}
 \usepackage[american]{babel}
 \usepackage{csquotes}
 \usepackage[backend=biber,style=apa]{biblatex}
-\usepackage{parskip}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{siunitx}
 \usepackage[hidelinks]{hyperref}
 
 \DeclareLanguageMapping{american}{american-apa}
+\addbibresource{../References.bib}
+\setlength{\bibitemsep}{\baselineskip}
 
-\title{Time Travelling to Avoid Trump\\\Large A Mathematical Analysis}
+\frenchspacing
+
+\title{\Huge Time Travelling to Avoid Trump\\\LARGE A Mathematical Analysis}
 \author{Vincent Macri \and David White \and Aviv Haber}
 \date{November 22, 2017}
-
-\addbibresource{../References.bib}
 
 \begin{document}
 	\pagenumbering{gobble}
 	\maketitle
+	\pagenumbering{roman}
 	\include{Abstract}
 	\tableofcontents
 	\clearpage
 	\pagenumbering{arabic}
-	\include{TwinParadox}
+	\part{The Twin Paradox}
+		\label{part:twinParadox}
+		\include{ParadoxSetup}
+		\include{ParadoxSolution}
 	\printbibliography
 \end{document}
