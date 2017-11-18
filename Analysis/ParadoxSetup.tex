@@ -1,80 +1,39 @@
 \chapter{Stating the Twin Paradox}
-	\section{Special relativity and acceleration}
-		\label{sec:srAndAcceleration}
-		It is commonly thought that general relativity is needed to handle acceleration.
-		However, special relativity is actually capable of handling acceleration, but it handles accelerating frames of reference differently than inertial frames of reference \autocite{sracceleration}.
+	\section{The problem}
+		Imagine two people, we will call them Alice\footnote{Of computer security white paper fame.} and Donald\footnote{Of presidential infamy.}.
 
-		What general relativity is needed for is handling gravitational forces.
-		However, just as we sometimes neglect air resistance when doing calculations with forces, we can sometimes neglect gravitation forces if they are insignificant enough, which they are for the purposes of the calculation we shall do in this paper \autocite{sracceleration}.
+		Donald is currently the president of the United States, and he is doing a bad job.
+		Alice doesn't like this situation, so she is going to to time travel to the future when Donald is no longer president.
+	\section{Solution to Trump}
+		Special relativity tells us that time will pass slower for an object in motion than an object at rest \autocites{textbook}{einstein1916}.
+		This means that if Alice moves very fast, she will experience less time pass for her than on earth, and will effectively time travel to the future.
+	\section{The paradox}
+		The paradox here is that special relativity states that the laws of physics are the same in all inertial frames of reference \autocites{textbook}{einstein1916}.
+		This means that we could also argue that Alice is not moving, and instead the earth is moving, which would result in Alice aging faster than Donald, which is the opposite of what we want and the opposite of what actually happens \autocite[\ppno~593--594]{textbook}.
 
-		Handling acceleration with special relativity is tricky, but not impossible.
-		It can be done by using an accelerating non-inertial frame of reference.
-	\section{What is the twin paradox?}
-		Imagine that there are two people, one stays on earth, and one leaves earth on a spaceship that travels at relativistic speeds.
-		Special relativity says that time dilates more as you approach the speed of light, so the person on the spaceship should age less than the person on earth, since the person on earth is standing still and the person on the spaceship is moving.
-		However, if we set our reference frame to be the spaceship, then the person on the spaceship is still, and the person on earth is moving.
-		So who does time actually dilate for?
-		This is the twin paradox.
-
-		The twin paradox is easily illustrated with this formula from special relativity \autocite[p.~583]{textbook}:
-		\[\frac{\Delta t_m}{\Delta t_s} = \frac{1}{\sqrt{1 - \frac{v^2}{c^2}}}\]
-		The problem with simply applying this formula is that it is talking about two observers, both of whom see the other observer moving relative to themselves.
-		This makes it ambiguous as to how time dilation will effect the two observers.
-		One of the observers should age faster than the other, but which one?
-
-		Also, this formula assumes both observers are in inertial frames of reference.
-		However, if the two observers wish to meet again, there must be a change in direction, which implies acceleration.
-		However, this is the only problem we have right now, so if we can come up with a way to handle acceleration with special relativity, we can resolve the paradox.
-		\subsection{Special relativity and the twin paradox}
-			If we are able to handle accelerating frames with special relativity, we can resolve the twin paradox without invoking general relativity.
-			This is possible, as we briefly mentioned in \ref{sec:srAndAcceleration} and will explain in more depth later. In fact, some authors even go as far as to say: ``\dots [general relativity] has nothing to say about the twin paradox'' \autocite{twinparadox}.
-		\subsection{Notation, terms, and assumptions}
-			In this chapter, we will talk about the following people:
-			\begin{description}
-				\item[Aviv] We will call the person travelling in a spaceship Aviv, and use $A$ to refer to her\footnote{This is a female Aviv, not Aviv Haber, because I want to be able to use ``him'' and ``her'' in my explanation.} in calculations.
-
-				\item[Donald]We will call the person on earth Donald, and use $D$ to refer to him in calculations. While the earth is not actually an inertial frame of reference, it is close enough to one that we will treat it as such.
-			\end{description}
-			Also, we will assume that Aviv starts her trip already moving at a relativistic speed.
-			This will makes the math easier, but has no effect on the solution to the twin paradox.
-			Aviv still needs to accelerate in order to change directions, so Aviv is still a non-inertial reference frame.
-			\subsection{The problem restated}
-				Aviv is on her relativistic spaceship, trying to move fast enough to dilate time enough so that when she gets back, Donald is no longer president.
-				Aviv calculates that she will age more, but Donald calculates that he will age more.
-				What actually happens?
-	\section{How does the twin paradox apply to us?}
-		\subsection{What happens when Aviv fires the rocket on her spaceship?}
-			This question seems to have an obvious answer: Aviv will accelerate.
-			But now we have a new question.
-			What does it mean to accelerate?
-
-			We can say that acceleration is the derivative of velocity, which is the derivative of position.
-			But now we have a new question.
-			What is a change in position?
-			\subsubsection{What is position?}
-				This question is trickier.
-				Usually, we define position in terms of some coordinate system, but what would be the origin for the universe?
-				And in what direction are the axes oriented?
-
-				There is no way to choose which way to orient the axes, but that doesn't really matter.
-				All that matters for the $x$, $y$, and $z$ axes is that they are perpendicular to each other.
-
-				But what is the origin?
-				We will define the origin as being at Aviv's current position.
-				This means that Aviv never moves in her coordinate system.
-				Instead, everything else moves.
-				This is okay, and the math will still work out.
-				In fact, treating Aviv as being still and everything else as moving actually makes the math easier.
-
-			\subsubsection{Answer to what happens when Aviv fires her rockets}
-				But what force is powerful enough to act on the entire universe when Aviv fires her rockets?
-				There is no force this powerful, but that's okay.
-				We can say that the rest of the universe (including Donald) experiences a uniform pseudo-force.
-				This force doesn't exist, it is simply a way of describing what happens to other objects when using an accelerating frame of reference such as Aviv.
-				This pseudo-force is uniform, and acts on all objects in proportion with their mass, much like gravity.
-				However, this is \emph{not} a real gravitational force, and as such, we do not need to invoke general relativity to use it \autocite{twinparadox}.
-
-				So, when Aviv fires her rockets, she sees that Donald starts moving, but she is still.
-				Meanwhile, Donald sees that he is standing still, and that Aviv is moving.
-
-				This is the twin paradox, and how it applies to us. Now we must resolve it.
+		This is called the twin paradox.
+	\section{Approach to resolution of the paradox}
+		It is commonly thought that general relativity is needed to resolve this paradox because Alice is in an accelerating frame of reference and special relativity cannot handle accelerating frames of reference \autocite{bouttell}.
+		That is not true.
+		Special relativity can indeed handle accelerating frames of reference, but it is more difficult \autocites{sracceleration}{twinparadox}.
+		However, it is much easier to use special relativity to solve this problem than it is to use general relativity.
+		And in fact, we will later see that the acceleration of Alice is irrelevant to the resolution of the paradox.
+	\section{Notation and assumptions}
+		\subsection{Notation}
+			\subsubsection{Our notation}
+				In math, Alice will be referred to as $A$, and Donald will be referred to as $D$.
+			\subsubsection{Other physics notation}
+			Following is some common non-trivial physics notation that we will be using:
+			\paragraph{Speed of light}
+				\[\si{\clight} = \SI{299792458}{\metre/\second}\]
+				We will use \si{\clight} as the speed of light in a vacuum. We are using \si{\clight} instead of $c$ because \si{\clight} is the recommended SI notation \autocite{siunits}.
+			\paragraph{$\beta$ notation}
+				\[\beta = \frac{\varSI{v}{\metre/\second}}{\varSI{\clight}{\metre/\second}}\]
+				Where $v$ is velocity and $\si{\clight}$ is the speed of light.
+		\subsection{Assumptions}
+			\subsubsection{Values}
+				We will say that Alice travels a distance of \SI{4}{\lightyear} at a speed of \SI{0.8}{\clight} since these are nice numbers to work with \autocite[\pno~35]{kogut2012introduction}.
+				She then turns around and comes back to earth.
+			\subsubsection{Turnaround}
+				We will assume that Alice makes an instantaneous turnaround.
+				Later we will show that this assumption has no effect on the resolution of the paradox.

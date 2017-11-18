@@ -1,13 +1,26 @@
 \documentclass[letterpaper,12pt]{report}
 
 \usepackage{parskip}
+\usepackage{geometry}
+%\usepackage[showframe]{geometry}
+\usepackage{float}
 \usepackage[american]{babel}
 \usepackage{csquotes}
 \usepackage[backend=biber,style=apa]{biblatex}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{siunitx}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{titlesec}
 \usepackage[hidelinks]{hyperref}
+
+\titlespacing*{\chapter}{0pt}{-25pt}{20pt}
+\titleformat{\chapter}[display]{\Huge\bfseries}{\chaptertitlename{} \thechapter}{10pt}{\LARGE}
+ 
+\newlength{\textW}
+\settowidth{\textW}{abcdefghijklmnopqrstuvwxyz}
+\geometry{textwidth=3\textW}
 
 \DeclareLanguageMapping{american}{american-apa}
 \addbibresource{../References.bib}
@@ -19,6 +32,31 @@
 \author{Vincent Macri \and David White \and Aviv Haber}
 \date{November 22, 2017}
 
+\pgfplotscreateplotcyclelist{MyCycleList}{%
+	{black,mark=*,thick},
+	{darkgray,mark=*,thick},
+	{gray,mark=*,thick},
+}
+
+\pgfplotsset{every axis/.append style={
+	axis x line=bottom, % Make the x-axis position be the middle of the graph
+	axis y line=left, % Make the y-axis position be the middle of the graph
+	axis line style={->}, % Arrows on one end
+	xlabel={$x$}, % Label the x-axis
+	ylabel={$y$}, % Label the y-axis
+	x label style={at={(axis description cs:1,0)},anchor=west},
+	y label style={at={(axis description cs:0,1)},anchor=south,rotate=-90},
+	grid style={line width=0.1pt, draw=lightgray},
+	grid=both,
+	cycle list name=MyCycleList,
+}}
+
+\NewDocumentCommand{\varSI}{}{\SI[number-math-rm=\mathnormal,parse-numbers=false]}
+
+\newcommand{\Del}{\mathrm{\Delta}}
+\newcommand{\lam}{\mathrm{\lambda}}
+
+\includeonly{ParadoxSolution}
 \begin{document}
 	\pagenumbering{gobble}
 	\maketitle

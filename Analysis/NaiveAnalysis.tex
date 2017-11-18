@@ -1,0 +1,25 @@
+\section{A naive analysis}
+	We have:
+	\[v = \SI{0.8}{\clight} \implies \beta = 0.8\]
+	\[d = \SI{4}{\lightyear}\]
+	And we know this formula from \cite[\pno~583]{textbook} (modified to use our notation):
+	\[\Delta t_D = \frac{\Delta t_A}{\sqrt{1 - \beta}}\]
+	Which can be rearranged into:
+	\begin{equation}\label{eq:aliceTime}
+		\Delta t_A = \Delta t_D\sqrt{1-\beta^2}
+	\end{equation}
+	We can trivially calculate how much time should pass for Donald:
+	\[\Delta t_D = \frac{2d}{v} = \frac{2 \times \SI{4}{\lightyear}}{\SI{0.8}{\clight}} = \frac{\SI{8}{\lightyear}}{\SI{0.8}{\clight}} = \SI{10}{\year}\]
+	And how much time should pass for Alice follows by simply plugging this into \eqref{eq:aliceTime}:
+	\begin{align*}
+		\Delta t_A &= \Delta 10\sqrt{1-0.8^2}\\
+		\Delta t_A &= \Delta 10\sqrt{\frac{9}{25}}\\
+		\Delta t_A &= \Delta 10\frac{3}{5}\\
+		\Delta t_A &= 6
+	\end{align*}
+	So, Donald ages by 10 years, and Alice ages by 6 years.
+
+	This answer is right, but the problem is that we started by assuming that Donald is stationary and Alice is moving.
+	However, we could have said that Alice is stationary and Donald is moving, and then we would calculate $\Delta t_A = 10$ and $\Delta t_D = 6$, which is wrong.
+	So doing the analysis this way leads to ambiguity.
+	We must develop a more rigorous way to analyze this problem.
