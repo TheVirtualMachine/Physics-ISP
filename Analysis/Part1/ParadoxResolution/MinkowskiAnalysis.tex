@@ -1,4 +1,4 @@
-\section{Minkowski spacetime and the twin paradox}
+\section{Minkowski spacetime and the twin paradox}\label{sec:minkowskiAnalysis}
 	Before we go further into the analysis, it is important to note that Donald and Alice do not necessarily need to be sending simple flashes of light once per second.
 	They can also flash an image displaying the current time passed on their clock, and flash that image once per second.
 	This has no effect on what happens, it just means that the other person doesn't need to perform as many calculations.
@@ -32,5 +32,73 @@
 		When Alice is at her turnaround, she will see Donald's clock display 1 year, since the light from after that has not reached her yet.
 		This means that Stella will observe figure \vref{fig:aliceInDonaldMinkowski} as the spacetime diagram according to Donald's clock.
 		\input{Figs/AliceInDonaldMinkowski}
-	\subsection{What about Alice's clock?}
-		Recall from our Doppler shift analysis from section \vref{sec:dopplerAnalysis} that Alice sees Donald's clock running at one third of its original speed as she is moving away from Donald, and she sees it moving at 3 times its original speed as she moves towards Donald.
+		So, 10 years pass for Donald, and Alice sees 10 years pass for him.
+	\subsection{What about Alice's clock?}\label{subsec:aliceClock}
+		Recall from section \vref{sec:dopplerAnalysis} that:
+		\begin{enumerate}
+			\item Alice's clock runs at one third of the speed of Donald's clock when Alice is on the outbound leg of her trip.
+			\item Alice's clock runs at three times the speed of Donald's clock when she is on the inbound leg of her trip.
+		\end{enumerate}
+		We can use this to translate the passage of time from Donald's clock into Alice's clock.
+
+		\subsubsection{The outbound leg}
+			Recall from figure \vref{fig:donaldMinkowski} that Donald's clock says that outbound leg of Alice's trip takes 9 years.
+			To translate from time on Donald's clock into time on Alice's clock during the outbound leg, simply multiply by $\frac{1}{3}$:
+			\begin{align*}
+				\Del t_A = \Del t_D \times \frac{1}{3}\\
+				\Del t_A = \SI{9}{\year} \times \frac{1}{3}\\
+				\Del t_A = \SI{3}{\year}
+			\end{align*}
+			So, three years pass for Alice on the inbound leg of her trip.
+		\subsubsection{The inbound leg}
+			Recall from figure \vref{fig:donaldMinkowski} that Donald's clock says that inbound leg of Alice's trip takes 1 year.
+			To translate from time on Donald's clock into time on Alice's clock during the inbound leg, simply multiply by 3:
+			\begin{align*}
+				\Del t_A = \Del t_D \times 3\\
+				\Del t_A = \SI{1}{\year} \times 3\\
+				\Del t_A = \SI{3}{\year}
+			\end{align*}
+			So, three years pass for Alice on the inbound leg of her trip.
+		\subsubsection{Total time for Alice}
+			If three years pass for Alice on her outbound leg, and three years pass for her on her inbound leg, then we can trivially calculate how much time passes for her in total:
+			\[\SI{3}{\year} + \SI{3}{\year} = \SI{6}{\year}\]
+			So, six years pass for Alice, and Donald sees six years pass for her.
+
+			At this point, we have shown that Alice and Donald clearly experience different passages of time, and here we can conclude our resolution to the twin paradox.
+			Just to be completely sure that we did this correctly though, we will repeat the calculations done in this section from the perspective of Alice, so show that there is no ambiguity in performing the analysis this way.
+	\subsection{Is it ambiguous?}
+		In subsection \vref{subsec:aliceClock}, we calculated the years passed based on what Donald experiences.
+		Does it work if we calculate it from Alice's experience as well?
+		Let's try.
+		\subsubsection{The outbound leg}
+			Alice sees 1 year pass in Donald's clock during her the outbound leg of her trip.
+			However, Alice knows that she is seeing Donald's clock running at one third of its actual speed.
+			So, by reversing the effects of the relativistic Doppler shift, she can calculate how long her outbound trip takes.
+			To do this, she simply divides by $\frac{1}{3}$:
+			\begin{align*}
+				\Del t_A = \Del t_D \div \frac{1}{3}\\
+				\Del t_A = \SI{1}{\year} \div \frac{1}{3}\\
+				\Del t_A = \SI{3}{\year}
+			\end{align*}
+			So, Alice calculates that her the outbound leg of her trip takes 3 years.
+		\subsubsection{The inbound leg}
+			Alice sees 9 years pass in Donald's clock during the inbound leg of her trip.
+			However, Alice knows that she is seeing Donald's clock running at three times its actual speed.
+			So, by reversing the effects of the relativistic Doppler shift, she can calculate how long her inbound trip takes.
+			To do this, she simply divides by $3$:
+			\begin{align*}
+				\Del t_A = \Del t_D \div 3\\
+				\Del t_A = \SI{9}{\year} \div \frac{1}{3}\\
+				\Del t_A = \SI{3}{\year}
+			\end{align*}
+			So, Alice calculates that her the inbound leg of her trip takes 3 years.
+		\subsubsection{Total time for Alice}
+			Again, if three years pass for Alice on her outbound leg, and three years pass for her on her inbound leg, then we can trivially calculate how much time passes for her in total:
+			\[\SI{3}{\year} + \SI{3}{\year} = \SI{6}{\year}\]
+			So, six years pass for Alice, and Donald sees six years pass for her.
+
+			At this point, our resolution of the twin paradox is pretty solid.
+			If you have been paying close attention, you may have noticed that our solution also works for a non-instantaneous turnaround involving acceleration.
+			It is okay if you do not see this yet.
+			It will be demonstrated in section \vref{sec:acceleratingAlice}.
+			However, first we will show one final way to demonstrate that Alice experiences 6 years pass for herself in section \vref{sec:lengthDilation}.

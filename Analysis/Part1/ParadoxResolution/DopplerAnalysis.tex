@@ -27,8 +27,8 @@
 
 		We will use the following notation here:
 		\begin{description}
-			\item[$f_A$] The frequency Alice shines her light at according to her own time. This is equal to \SI{1}{\Hz}.
-			\item[$f_D$] The frequency Donald shines his light at according to his own time. This is equal to \SI{1}{\Hz}.
+			\item[$f_A$] The frequency Alice shines her light at according to her own time.
+			\item[$f_D$] The frequency Donald shines his light at according to his own time.
 			\item[$f'_A$] The frequency Alice sees Donald shine his light at according to her own time. This is calculated with \eqref{eq:relDopAway} when Alice is moving away from Donald, and with \eqref{eq:relDopTowards} when Alice is moving towards Donald.
 			\item[$f'_D$] The frequency Donald sees Alice shine her light at according to his own time. This is calculated with \eqref{eq:relDopAway} when Alice is moving away from Donald, and with \eqref{eq:relDopTowards} when Alice is moving towards Donald.
 		\end{description}
@@ -37,8 +37,8 @@
 			\paragraph{What Alice sees}
 			\begin{align*}
 				f'_A &= f_D\sqrt{\frac{1 - \beta}{1 + \beta}}\\
-				f'_A &= \SI{1}{\Hz} \times \sqrt{\frac{1}{9}}\\
-				f'_A &= \frac{1}{3}\,\si{\Hz}
+				f'_A &= f_D \times \sqrt{\frac{1}{9}}\\
+				f'_A &= \frac{1}{3}f_D
 			\end{align*}
 			So, Alice sees Donald's clock running slowly as she is moving away from him.
 
@@ -47,8 +47,8 @@
 			\paragraph{What Donald sees}
 			\begin{align*}
 				f'_D &= f_A\sqrt{\frac{1 - \beta}{1 + \beta}}\\
-				f'_D &= \SI{1}{\Hz} \times \sqrt{\frac{1}{9}}\\
-				f'_D &= \frac{1}{3}\,\si{\Hz}
+				f'_D &= f_A \times \sqrt{\frac{1}{9}}\\
+				f'_D &= \frac{1}{3}f_A
 			\end{align*}
 			So, Donald sees Alice's clock running slowly as she is moving away from him.
 		\end{samepagecols}
@@ -56,8 +56,8 @@
 			\paragraph{What Alice sees}
 			\begin{align*}
 				f'_A &= f_D\sqrt{\frac{1 + \beta}{1 - \beta}}\\
-				f'_A &= \SI{1}{\Hz} \times \sqrt{9}\\
-				f'_A &= \SI{3}{\Hz}
+				f'_A &= f_D \times \sqrt{9}\\
+				f'_A &= 3 f_D
 			\end{align*}
 			So, Alice sees Donald's clock running quickly as she is moving towards him.
 
@@ -66,8 +66,8 @@
 			\paragraph{What Donald sees}
 			\begin{align*}
 				f'_D &= f_A\sqrt{\frac{1 + \beta}{1 - \beta}}\\
-				f'_D &= \SI{1}{\Hz} \times \sqrt{9}\\
-				f'_D &= \SI{3}{\Hz}
+				f'_D &= f_A \times \sqrt{9}\\
+				f'_D &= 3 f_A
 			\end{align*}
 			So, Donald sees Alice's clock running quickly as she is moving towards him.
 		\end{samepagecols}

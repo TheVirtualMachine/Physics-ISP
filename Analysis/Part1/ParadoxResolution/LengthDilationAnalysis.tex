@@ -1,0 +1,50 @@
+\section{Length dilation analysis}\label{sec:lengthDilation}
+	It seems quite unfair to Alice to say that she can only calculate how much time passes for her by looking at Donald's clock and reversing the effect through some calculations.
+	After all, Alice does have a clock on her ship.
+	Why can't she use that clock?
+
+	She can, but I've saved this approach it until now because it involves another way of looking at the problem and introduces a new concept: length dilation.
+
+	Just as time dilates for objects moving quickly, so does length, and this is represented by the following formula \autocite[\ppno~588--594]{textbook}:
+	\begin{equation}\label{eq:lengthDilation}
+		L_m = L_s \sqrt{1 - \frac{v^2}{\si{\clight}^2}}
+	\end{equation}
+	Here, $L_m$ represents the length of an object as measured by an observer moving relative to it at a speed $v$.
+	The object has a length of $L_s$ when measured by someone at rest relative to the object.
+
+	\subsection{How does this apply to Alice?}
+		Alice is in two different inertial frames of reference during her trip.
+		She is in one inertial frame of reference during the outbound leg of her trip, and she is in another one on the inbound leg of her trip.
+		Recall that special relativity states that the laws of physics are the same in all inertial frames of reference \autocite{textbook,einstein1916}.
+		
+		So, we can say that Alice is at rest, and the entire universe is moving relative to her.
+		This allows us to apply length dilation to the universe.
+
+		We will call $L_U$ the length of the portion of the universe Alice is travelling through.
+		The universe measures this length, $L_U$, as \SI{4}{\lightyear}.
+		However, since the universe is moving relative to Alice, she will measure a different length, which we will call $L_A$.
+
+		We replace $L_m$ from \eqref{eq:lengthDilation} with $L_A$, $L_s$ with $L_U$, and $\frac{v^2}{\si{\clight}}$ with $\beta$, then calculate $L_A$:
+		\begin{align*}
+			L_A &= L_U \sqrt{1 - \beta^2}\\
+			L_A &= \SI{4}{\lightyear} \sqrt{1 - 0.8^2}\\
+			L_A &= \SI{4}{\lightyear} \sqrt{\frac{9}{25}}\\
+			L_A &= \SI{4}{\lightyear} \times \frac{3}{5}\\
+			L_A &= \SI{2.4}{\lightyear}
+		\end{align*}
+		Alice measures the length of each leg of her trip as \SI{2.4}{\lightyear}.
+		She knows her speed is \SI{0.8}{\clight}, and so she can easily calculate how long one leg of her journey will take:
+		\begin{align*}
+			\Del t_A &= \frac{d}{v}\\
+			\Del t_A &= \frac{\SI{2.4}{\lightyear}}{\SI{0.8}{\clight}}\\
+			\Del t_A &= \SI{3}{\year}
+		\end{align*}
+		So, Alice calculates that each leg of her journey takes three years.
+
+		Again, there are two legs of her journey, $3 + 3 = 6$, so her entire journey will take 6 years.
+	\subsection{The problem with the length dilation analysis}
+		While this analysis was a lot simpler than our previous analysis with Minkowski spacetime and the relativistic Doppler effect, it is not as robust.
+		This analysis only works in an inertial frame of reference.
+		In practice, Alice will undergo acceleration, and the length dilation analysis no longer holds for that.
+
+		Next, we will show that our original analysis also works if Alice undergoes acceleration.
