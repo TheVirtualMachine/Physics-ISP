@@ -1,6 +1,9 @@
 \documentclass[letterpaper,12pt]{report}
 
+\usepackage{import}
 \usepackage{parskip}
+\usepackage{multicol}
+\usepackage{varioref}
 \usepackage{geometry}
 %\usepackage[showframe]{geometry}
 \usepackage{float}
@@ -17,6 +20,9 @@
 
 \titlespacing*{\chapter}{0pt}{-25pt}{20pt}
 \titleformat{\chapter}[display]{\Huge\bfseries}{\chaptertitlename{} \thechapter}{10pt}{\LARGE}
+
+\setlength{\columnsep}{1cm}
+\setlength{\columnseprule}{1pt}
  
 \newlength{\textW}
 \settowidth{\textW}{abcdefghijklmnopqrstuvwxyz}
@@ -54,6 +60,7 @@
 }}
 
 \NewDocumentCommand{\varSI}{}{\SI[number-math-rm=\mathnormal,parse-numbers=false]}
+\NewDocumentEnvironment{samepagecols}{m O{}}{\vspace{\baselineskip}\begin{minipage}{\textwidth}\begin{multicols}{#1}[#2]}{\end{multicols}\end{minipage}\vspace{\baselineskip}}
 
 \newcommand{\Del}{\mathrm{\Delta}}
 \newcommand{\lam}{\mathrm{\lambda}}
@@ -68,7 +75,8 @@
 	\clearpage
 	\pagenumbering{arabic}
 	\part{The Twin Paradox}\label{part:twinParadox}
-		\include{ParadoxSetup}
-		\include{ParadoxSolution}
+		\import{Part1/ParadoxSetup/}{ParadoxSetup}
+		\import{Part1/ResolutionSetup/}{ResolutionSetup}
+		\import{Part1/ParadoxResolution/}{ParadoxResolution}
 	\printbibliography
 \end{document}

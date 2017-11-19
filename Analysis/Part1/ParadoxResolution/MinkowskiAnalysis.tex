@@ -1,0 +1,36 @@
+\section{Minkowski spacetime and the twin paradox}
+	Before we go further into the analysis, it is important to note that Donald and Alice do not necessarily need to be sending simple flashes of light once per second.
+	They can also flash an image displaying the current time passed on their clock, and flash that image once per second.
+	This has no effect on what happens, it just means that the other person doesn't need to perform as many calculations.
+	We will assume that Alice and Donald are flashing an image of their clock, in order to make this section easier to follow.
+	We will also assume that they both have telescopes strong enough to see the flashed image.
+	\subsection{When does Donald see Alice's turnaround?}
+		When Alice reaches her turnaround point, she is \SI{4}{\lightyear} away from Donald.
+		This means that it will take 4 years for the light from the turnaround to reach him from this point.
+		Donald can easily calculate when Alice \emph{should} reach the turnaround point though:
+		\begin{align*}
+			t &= \frac{d}{v}\\
+			t &= \frac{\SI{4}{\lightyear}}{\SI{0.8}{\clight}}\\
+			t &= \SI{5}{\year}
+		\end{align*}
+		Alice should reach the turnaround in 5 years, but Donald does not see that until 4 years after that, so he will see Alice's turnaround happen 9 years after her departure.
+
+		Alice travels towards earth at the same speed she travels away from earth, so Donald can also calculate when Alice should get back:
+		\begin{align*}
+			t &= \frac{2d}{v}\\
+			t &= \frac{\SI{8}{\lightyear}}{\SI{0.8}{\clight}}\\
+			t &= \SI{10}{\year}
+		\end{align*}
+		The world lines as seen by Donald are shown in figure \vref{fig:donaldMinkowski}.
+		\input{Figs/DonaldMinkowski}
+	\subsection{What does Alice see on Donald's clock at her turnaround?}
+		It Alice's turnaround is \SI{4}{\lightyear} away, which means it takes \SI{4}{\year} for Donald's light flashes to reach that point.
+
+		While Donald does not see Alice's turnaround until 9 years after her departure, he can calculate that it should happen 5 years after her departure.
+		This means that when Alice reaches her turnaround point, she not will see any light flashes sent by Donald after the 1 year mark on his clock.
+
+		When Alice is at her turnaround, she will see Donald's clock display 1 year, since the light from after that has not reached her yet.
+		This means that Stella will observe figure \vref{fig:aliceInDonaldMinkowski} as the spacetime diagram according to Donald's clock.
+		\input{Figs/AliceInDonaldMinkowski}
+	\subsection{What about Alice's clock?}
+		Recall from our Doppler shift analysis from section \vref{sec:dopplerAnalysis} that Alice sees Donald's clock running at one third of its original speed as she is moving away from Donald, and she sees it moving at 3 times its original speed as she moves towards Donald.

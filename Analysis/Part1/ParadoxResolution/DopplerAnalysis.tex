@@ -1,0 +1,77 @@
+\section{The relativistic Doppler effect and the twin paradox}\label{sec:dopplerAnalysis}
+	\subsection{Recall our assumptions}
+		Recall the assumptions and values we decided to use in subsection \ref{subsec:twinAssumptions}:
+		\begin{description}
+			\item[Distance] Alice travels a distance of 4 light years, so $d = \SI{4}{\lightyear}$.
+			\item[Velocity] Alice travels at a speed of \SI{0.8}{\clight}, so $v = \SI{0.8}{\clight}$ and $\beta = 0.8$.
+		\end{description}
+		The actual values we use do not matter for resolving the paradox.
+		These values were chosen because they give nice numbers when we perform the calculations, which makes the analysis easier to follow.
+
+		We also assumed an instantaneous turnaround.
+		This too makes the math easier, but we will show that it does not change the resolution to the paradox.
+		We can assume that Alice is very strong and capable of surviving \SI{479667932.8}{\metre/\second^2} of acceleration.\footnote{$\SI{479667932.8}{\metre/\second} = \SI{2}{\clight}$}
+		If Alice is not that strong, we can instead say that another person, also named Alice, who is travelling at the same speed as the first Alice but in the opposite direction, passes by the first Alice at the turnaround point and syncs up her clock with the first Alice's clock.
+		This would mean that when the second Alice arrives at earth, her clock will read the same thing as the original Alice's would have if she could survive all of that acceleration.
+		Either way of handling Alice's instantaneous turnaround will work, since we will end up with the same reading on Alice's clock.
+	\subsection{The Doppler analysis}
+		Analyzing the twin paradox with the relativistic Doppler effect is helpful because it allows us to calculate what each person sees, and show that they are seeing different things, which solves the ambiguity stated in section \ref{sec:naive}.
+
+		When we derived the relativistic Doppler equations in section \ref{sec:dopplerDerivation}, we said that only Alice is shining a flashlight once per second.
+		We did this to simplify our notation in that section and make the derivation easier to follow.
+		However, this doesn't work for actually solving the paradox.
+		We must have both Alice and Donald flash their lights once per second, as measured by their own proper time.
+		Both Alice and Donald know that the other person is shining their light once per second.
+
+		This means that both of \eqref{eq:relDopAway} and \eqref{eq:relDopTowards} will apply to both Alice and Donald.
+
+		We will use the following notation here:
+		\begin{description}
+			\item[$f_A$] The frequency Alice shines her light at according to her own time. This is equal to \SI{1}{\Hz}.
+			\item[$f_D$] The frequency Donald shines his light at according to his own time. This is equal to \SI{1}{\Hz}.
+			\item[$f'_A$] The frequency Alice sees Donald shine his light at according to her own time. This is calculated with \eqref{eq:relDopAway} when Alice is moving away from Donald, and with \eqref{eq:relDopTowards} when Alice is moving towards Donald.
+			\item[$f'_D$] The frequency Donald sees Alice shine her light at according to his own time. This is calculated with \eqref{eq:relDopAway} when Alice is moving away from Donald, and with \eqref{eq:relDopTowards} when Alice is moving towards Donald.
+		\end{description}
+
+		\begin{samepagecols}{2}[\subsubsection{Alice moving away from Donald}]
+			\paragraph{What Alice sees}
+			\begin{align*}
+				f'_A &= f_D\sqrt{\frac{1 - \beta}{1 + \beta}}\\
+				f'_A &= \SI{1}{\Hz} \times \sqrt{\frac{1}{9}}\\
+				f'_A &= \frac{1}{3}\,\si{\Hz}
+			\end{align*}
+			So, Alice sees Donald's clock running slowly as she is moving away from him.
+
+			\columnbreak
+
+			\paragraph{What Donald sees}
+			\begin{align*}
+				f'_D &= f_A\sqrt{\frac{1 - \beta}{1 + \beta}}\\
+				f'_D &= \SI{1}{\Hz} \times \sqrt{\frac{1}{9}}\\
+				f'_D &= \frac{1}{3}\,\si{\Hz}
+			\end{align*}
+			So, Donald sees Alice's clock running slowly as she is moving away from him.
+		\end{samepagecols}
+		\begin{samepagecols}{2}[\subsubsection{Alice moving towards Donald}]
+			\paragraph{What Alice sees}
+			\begin{align*}
+				f'_A &= f_D\sqrt{\frac{1 + \beta}{1 - \beta}}\\
+				f'_A &= \SI{1}{\Hz} \times \sqrt{9}\\
+				f'_A &= \SI{3}{\Hz}
+			\end{align*}
+			So, Alice sees Donald's clock running quickly as she is moving towards him.
+
+			\columnbreak
+
+			\paragraph{What Donald sees}
+			\begin{align*}
+				f'_D &= f_A\sqrt{\frac{1 + \beta}{1 - \beta}}\\
+				f'_D &= \SI{1}{\Hz} \times \sqrt{9}\\
+				f'_D &= \SI{3}{\Hz}
+			\end{align*}
+			So, Donald sees Alice's clock running quickly as she is moving towards him.
+		\end{samepagecols}
+		Alice and Donald see the same thing.
+		So why do we end up with Donald aging more if they both see the other age slowly, then they both see the other age quickly?
+
+		The answer lies in how long each person sees the other aging at a different speed.

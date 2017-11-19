@@ -1,0 +1,29 @@
+\begin{figure}[H]
+	\begin{minipage}{0.25\textwidth}
+		\caption{Minkowski spacetime diagram of what Donald will see.}
+		\label{fig:donaldMinkowski}
+	\end{minipage}
+	\hfill
+	\begin{minipage}{0.7\textwidth}
+		\begin{tikzpicture}
+			\begin{axis}[
+					xlabel=$d\ (\si{\lightyear})$,
+					ylabel=$t\ (\si{\year})$,
+					xmin=0,
+					xmax=4.25,
+					ymin=0,
+					ymax=10.75,
+					xtick distance=1,
+					ytick distance=1,
+					height=4in,
+					width=4in,
+				]
+				\addplot plot coordinates {
+				(0,0)
+				(4,9)
+				(0,10)
+				};
+			\end{axis}
+		\end{tikzpicture}
+	\end{minipage}
+\end{figure}
