@@ -1,0 +1,72 @@
+\section{Deriving the relativistic Doppler effect}
+	The simplest way to solve the twin paradox is to use the relativistic Doppler effect in order to analyze what Donald sees and what Alice sees.
+
+	We will have both Alice and Donald flash a light at the other once per second, according to their own proper time.
+	Their lights are infinitely powerful, and can be seen from light years away (once the light has travelled there of course).
+	We will assume the path of the lights are entirely through a perfect vacuum.
+	\subsection{More notation}
+		First, let's define some notation specific to this section:
+		\begin{description}
+			\item[$f_s$] The frequency the emitter (source) flashes their light at. We will make Alice the source.
+			\item[$f_o$] The frequency the other person (observer) sees the light flashing at. We will make Donald the observer of Alice's flashing light.
+			\item[$t_s$] The proper time to the next wavefront as seen by the emitting source, Alice.
+			\item[$t_o$] The proper time to the next wavefront as seen by person observing the flashes, Donald.
+			\item[$\lam$] The distance to the next wave front of the approaching light wave. $\lam$ is calculated as:
+			              \[\lam = \frac{\varSI{\clight}{\metre/\second}}{\varSI{f_s}{\per\second}} = \varSI{\frac{\si{\clight}}{f_s}}{\metre}\]
+		\end{description}
+	\subsection{The derivation}
+		We start by relating $\Del t_s$ to $\lam$ and $v$ when Alice is moving away from Donald:
+		\begin{align*}
+			\Del t_s &= \frac{\lam}{\si{\clight}} + \frac{v \times \Del t_s}{\si{\clight}}\\
+			\si{\clight} \Del t_s &= \lam + v\Del t_s\\
+			\si{\clight} \Del t_s - v\Delta t_s &= \lam\\
+			\Del t_s (\si{\clight} - v) &= \lam\\
+			\Del t_s &= \frac{\lam}{\si{\clight} - v}\\
+			\Del t_s &= \frac{1}{\si{\clight} - v} \times \lam
+		\end{align*}
+		Now substitute in $\lam = \frac{\si{\clight}}{f_s}$:
+		\begin{align}
+			\Del t_s &= \frac{1}{\si{\clight} - v} \times \frac{\si{\clight}}{f_s}\nonumber\\
+			\Del t_s &= \frac{\si{\clight}}{\si{\clight} - v} \times \frac{1}{f_s}\nonumber\\
+			\Del t_s &= \frac{1}{1 - \frac{v}{\si{\clight}}} \times \frac{1}{f_s}\nonumber\\
+			\Del t_s &= \frac{1}{f_s(1 - \beta)}\label{eq:dop1}
+		\end{align}
+		Next, we will perform a unit analysis to verify that \eqref{eq:dop1} gives us a value in seconds:
+		\begin{align*}
+			\Del t_s &= \frac{1}{\si{\per\second}}\\
+			\Del t_s &= \si{\second}
+		\end{align*}
+		So, we have derived \eqref{eq:dop1} and verified that it gives us a value in seconds.
+		Now we need to use this formula.
+
+		The next step is to develop the actual Doppler effect formula.
+		We will work off of the special relativity time dilation formula given in \cite[\pno~593]{textbook}, modified to use our notation, and rearrange it into a form more useful for our purposes:
+		\begin{align}
+			\Del t_s &= \frac{\Del t_o}{\sqrt{1 - \beta^2}}\nonumber\\
+			\Del t_o &= \Del t_s\sqrt{1 - \beta^2}\label{eq:dopTimeDilation1}
+		\end{align}
+		We will now substitute \eqref{eq:dop1} into \eqref{eq:dopTimeDilation1} to combine our two equations in order to develop a third formula:
+		\begin{equation}\label{eq:dop3}
+			\Del t_o = \frac{\sqrt{1 - \beta^2}}{f_s(1 - \beta)}
+		\end{equation}
+		Next, we will finish developing the relativistic Doppler shift formula.
+
+		Note that, by definition:
+		\begin{equation}\label{eq:dop2}
+			f_o = \frac{1}{\Del t_o}
+		\end{equation}
+		We will now substitute \eqref{eq:dop3} into \eqref{eq:dop2}:
+		\begin{align}
+			f_o &= \frac{1}{\frac{\sqrt{1 - \beta^2}}{f_s(1 - \beta)}}\nonumber\\
+			f_o &= \frac{f_s(1 - \beta)}{\sqrt{1 - \beta^2}}\nonumber\\
+			f_o &= f_s\left(\frac{1 - \beta}{\sqrt{1 - \beta^2}}\right)\nonumber\\
+			f_o &= f_s\left(\frac{\sqrt{(1 - \beta)^2}}{\sqrt{1^2 - \beta^2}}\right)\nonumber\\
+			f_o &= f_s\left(\frac{\sqrt{(1 - \beta)(1 - \beta)}}{\sqrt{(1 - \beta)(1 + \beta)}}\right)\nonumber\\
+			f_o &= f_s\sqrt{\frac{(1 - \beta)(1 - \beta)}{(1 - \beta)(1 + \beta)}}\nonumber\\
+			f_o &= f_s \times \sqrt{\frac{1 - \beta}{1 + \beta}}\label{eq:relDopAway}
+		\end{align}
+		This is the formula for the relativistic Doppler effect when Alice and Donald are moving away from each other.
+		If Alice is moving towards Donald, then we simply change the sign on $\beta$ to get:
+		\begin{equation}\label{eq:relDopTowards}
+			f_o = f_s \times \sqrt{\frac{1 + \beta}{1 - \beta}}
+		\end{equation}

@@ -32,6 +32,8 @@
 \author{Vincent Macri \and David White \and Aviv Haber}
 \date{November 22, 2017}
 
+\pgfplotsset{compat=1.13}
+
 \pgfplotscreateplotcyclelist{MyCycleList}{%
 	{black,mark=*,thick},
 	{darkgray,mark=*,thick},
@@ -56,7 +58,7 @@
 \newcommand{\Del}{\mathrm{\Delta}}
 \newcommand{\lam}{\mathrm{\lambda}}
 
-\includeonly{ParadoxSolution}
+%\includeonly{ParadoxSolution}
 \begin{document}
 	\pagenumbering{gobble}
 	\maketitle
@@ -65,8 +67,7 @@
 	\tableofcontents
 	\clearpage
 	\pagenumbering{arabic}
-	\part{The Twin Paradox}
-		\label{part:twinParadox}
+	\part{The Twin Paradox}\label{part:twinParadox}
 		\include{ParadoxSetup}
 		\include{ParadoxSolution}
 	\printbibliography
