@@ -2,7 +2,7 @@
 	Before we go further into the analysis, it is important to note that Donald and Alice do not necessarily need to be sending simple flashes of light once per second.
 	They can also flash an image displaying the current time passed on their clock, and flash that image once per second.
 	This has no effect on what happens, it just means that the other person doesn't need to perform as many calculations.
-	We will assume that Alice and Donald are flashing an image of their clock, in order to make this section easier to follow.
+	To make this section easier to follow, we will assume that Alice and Donald are flashing an image of their clock.
 	We will also assume that they both have telescopes strong enough to see the flashed image from several light years away.
 	\subsection{When does Donald see Alice's turnaround?}
 		When Alice reaches her turnaround point, she is \SI{4}{\lightyear} away from Donald.
@@ -30,7 +30,7 @@
 		This means that when Alice reaches her turnaround point, she not will see any light flashes sent by Donald after the 1 year mark on his clock.
 
 		When Alice is at her turnaround, she will see Donald's clock display 1 year, since the light from after that has not reached her yet.
-		This means that Stella will observe figure \vref{fig:aliceInDonaldMinkowski} as the spacetime diagram according to Donald's clock.
+		This means that Alice will observe figure \vref{fig:aliceInDonaldMinkowski} as the spacetime diagram according to Donald's clock.
 		\input{Figs/AliceInDonaldMinkowski}
 		So, 10 years pass for Donald, and Alice sees 10 years pass for him.
 	\subsection{What about Alice's clock?}\label{subsec:aliceClock}
@@ -42,36 +42,36 @@
 		We can use this to translate the passage of time from Donald's clock into Alice's clock.
 
 		\subsubsection{The outbound leg}
-			Recall from figure \vref{fig:donaldMinkowski} that Donald's clock says that outbound leg of Alice's trip takes 9 years.
+			Recall from figure \vref{fig:donaldMinkowski} that Donald's clock says that the outbound leg of Alice's trip takes 9 years.
 			To translate from time on Donald's clock into time on Alice's clock during the outbound leg, simply multiply by $\frac{1}{3}$:
 			\begin{align*}
 				\Del t_A = \Del t_D \times \frac{1}{3}\\
 				\Del t_A = \SI{9}{\year} \times \frac{1}{3}\\
 				\Del t_A = \SI{3}{\year}
 			\end{align*}
-			So, three years pass for Alice on the inbound leg of her trip.
+			So, 3 years pass for Alice on the outbound leg of her trip.
 		\subsubsection{The inbound leg}
-			Recall from figure \vref{fig:donaldMinkowski} that Donald's clock says that inbound leg of Alice's trip takes 1 year.
+			Recall from figure \vref{fig:donaldMinkowski} that Donald's clock says that the inbound leg of Alice's trip takes 1 year.
 			To translate from time on Donald's clock into time on Alice's clock during the inbound leg, simply multiply by 3:
 			\begin{align*}
 				\Del t_A = \Del t_D \times 3\\
 				\Del t_A = \SI{1}{\year} \times 3\\
 				\Del t_A = \SI{3}{\year}
 			\end{align*}
-			So, three years pass for Alice on the inbound leg of her trip.
+			So, 3 years pass for Alice on the inbound leg of her trip.
 		\subsubsection{Total time for Alice}
-			If three years pass for Alice on her outbound leg, and three years pass for her on her inbound leg, then we can trivially calculate how much time passes for her in total:
+			If 3 years pass for Alice on her outbound leg, and 3 years pass for her on her inbound leg, then we can trivially calculate how much time passes for her in total:
 			\[\SI{3}{\year} + \SI{3}{\year} = \SI{6}{\year}\]
-			So, six years pass for Alice, and Donald sees six years pass for her.
+			So, 6 years pass for Alice, and Donald sees 6 years pass for her.
 
 			At this point, we have shown that Alice and Donald clearly experience different passages of time, and here we can conclude our resolution to the twin paradox.
-			Just to be completely sure that we did this correctly though, we will repeat the calculations done in this section from the perspective of Alice, so show that there is no ambiguity in performing the analysis this way.
+			Just to be completely sure that we did this correctly though, we will repeat the calculations done in this section from the perspective of Alice, to show that there is no ambiguity in performing the analysis this way.
 	\subsection{Is it ambiguous?}
 		In subsection \vref{subsec:aliceClock}, we calculated the years passed based on what Donald experiences.
 		Does it work if we calculate it from Alice's experience as well?
 		Let's try.
 		\subsubsection{The outbound leg}
-			Alice sees 1 year pass in Donald's clock during her the outbound leg of her trip.
+			Alice sees 1 year pass on Donald's clock during the outbound leg of her trip.
 			However, Alice knows that she is seeing Donald's clock running at one third of its actual speed.
 			So, by reversing the effects of the relativistic Doppler shift, she can calculate how long her outbound trip takes.
 			To do this, she simply divides by $\frac{1}{3}$:
@@ -80,22 +80,22 @@
 				\Del t_A = \SI{1}{\year} \div \frac{1}{3}\\
 				\Del t_A = \SI{3}{\year}
 			\end{align*}
-			So, Alice calculates that her the outbound leg of her trip takes 3 years.
+			So, Alice calculates that the outbound leg of her trip takes 3 years.
 		\subsubsection{The inbound leg}
-			Alice sees 9 years pass in Donald's clock during the inbound leg of her trip.
+			Alice sees 9 years pass on Donald's clock during the inbound leg of her trip.
 			However, Alice knows that she is seeing Donald's clock running at three times its actual speed.
 			So, by reversing the effects of the relativistic Doppler shift, she can calculate how long her inbound trip takes.
-			To do this, she simply divides by $3$:
+			To do this, she simply divides by 3:
 			\begin{align*}
 				\Del t_A = \Del t_D \div 3\\
 				\Del t_A = \SI{9}{\year} \div \frac{1}{3}\\
 				\Del t_A = \SI{3}{\year}
 			\end{align*}
-			So, Alice calculates that her the inbound leg of her trip takes 3 years.
+			So, Alice calculates that the inbound leg of her trip takes 3 years.
 		\subsubsection{Total time for Alice}
-			Again, if three years pass for Alice on her outbound leg, and three years pass for her on her inbound leg, then we can trivially calculate how much time passes for her in total:
+			Again, if 3 years pass for Alice on the outbound leg, and 3 years pass for her on the inbound leg, then we can trivially calculate how much time passes for her in total:
 			\[\SI{3}{\year} + \SI{3}{\year} = \SI{6}{\year}\]
-			So, six years pass for Alice, and Donald sees six years pass for her.
+			So, 6 years pass for Alice, and Donald sees 6 years pass for her.
 
 			At this point, our resolution of the twin paradox is pretty solid.
 			If you have been paying close attention, you may have noticed that our solution also works for a non-instantaneous turnaround involving acceleration.
