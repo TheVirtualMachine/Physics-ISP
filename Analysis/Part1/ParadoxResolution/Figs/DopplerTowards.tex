@@ -1,0 +1,25 @@
+\begin{figure}[H]
+	\caption{Graph of $f_o$ vs $\beta$ for the relativistic Doppler effect when Alice is moving towards Donald. Assuming $f_s = \SI{1}{\Hz}$, as it is in our example.}
+	\label{fig:dopplerTowardsGraph}
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+				xlabel=$\beta$,
+				ylabel=$f_o$,
+				xtick distance=0.1,
+				ytick distance=1,
+				width=0.9\textwidth,
+				height=2in,
+				xmin=0,
+				xmax=1,
+				ymin=0,
+				ymax=5,
+			]
+			\addplot[
+				domain=0:1,
+				samples=501,
+			]
+			{sqrt((1+x)/(1-x))};
+		\end{axis}
+	\end{tikzpicture}
+\end{figure}

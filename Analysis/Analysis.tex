@@ -60,7 +60,8 @@
 }}
 
 \NewDocumentCommand{\varSI}{}{\SI[number-math-rm=\mathnormal,parse-numbers=false]}
-\NewDocumentEnvironment{samepagecols}{m O{}}{\vspace{\baselineskip}\begin{minipage}{\textwidth}\begin{multicols}{#1}[#2]}{\end{multicols}\end{minipage}\vspace{\baselineskip}}
+\NewDocumentEnvironment{samepagecols}{m O{}}{\vspace{\baselineskip}~\newline\begin{minipage}{\textwidth}\begin{multicols}{#1}[#2]}{\end{multicols}\end{minipage}\vspace{\baselineskip}}
+\NewDocumentEnvironment{compactmath}{}{\vspace{-0.75\baselineskip}\begin{equation*}}{\end{equation*}\vspace{-1.75\baselineskip}}
 
 \newcommand{\Del}{\mathrm{\Delta}}
 \newcommand{\lam}{\mathrm{\lambda}}
@@ -78,5 +79,6 @@
 		\import{Part1/ParadoxSetup/}{ParadoxSetup}
 		\import{Part1/ResolutionSetup/}{ResolutionSetup}
 		\import{Part1/ParadoxResolution/}{ParadoxResolution}
+	\nocite{*}
 	\printbibliography
 \end{document}
