@@ -53,6 +53,11 @@
 			\Del T_T &= 2\Del t_1 + \Del t_2\\
 			\Del T_T &= 2\Del t_1 + \frac{\left(2\pi - 2\arctan\left(\frac{\Del d_1}{r}\right)\right) \frac{v^2}{a}}{v}\\
 			\Del T_T &= 2\Del t_1+\frac{\left(2\pi - 2\arctan\left(\frac{\frac{\si{\clight}^2}{a}\ln\left(\cosh\left(\frac{a\Del t_1}{c}\right)\right)}{\frac{v^2}{a}}\right)\right) v}{a}\\
-			\Del T_T &= 2\Del t_1+\frac{2\pi-2\arctan\left(\frac{\si{\clight}^2\ln\left(\cosh\left(\frac{a\Del t_1}{\si{\clight}}\right)\right)}{\left(\si{\clight}\tanh\left(\frac{a\Del t_1}{\si{\clight}}\right)\right)^2}\right) \times \si{\clight}\tanh\left(\frac{a\Del t_1}{\si{\clight}}\right)}{a}
+			\Del T_T &= 2\Del t_1+\frac{\left(2\pi-2\arctan\left(\frac{\si{\clight}^2\ln\left(\cosh\left(\frac{a\Del t_1}{\si{\clight}}\right)\right)}{\left(\si{\clight}\tanh\left(\frac{a\Del t_1}{\si{\clight}}\right)\right)^2}\right)\right) \times \si{\clight}\tanh\left(\frac{a\Del t_1}{\si{\clight}}\right)}{a}
 		\end{align*}
 		Trying to solve for $\Del t_1$ will lead us to a world of pain, so instead we will use a computer to solve it.
+
+		This program was written by David White, and the source code is on the following pages:
+		\newpage
+		\lstinputlisting[language=Java]{../../../Simulator/TimeDilationCalc.java}
+	\subsection{The linear case}
