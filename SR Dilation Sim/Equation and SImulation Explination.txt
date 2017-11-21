@@ -1,0 +1,82 @@
+Before making any calculations with velocity, we must first redefine our equation for velocity. Given that the speed of
+light **(c)** is constant and is considered the "universal speed limit", it can be reasoned that **v=at** will no longer serve
+as an accurate calculation for velocity since it can exceed c. Therefore we must use **v=c tanh(at/c)** as our equation for 
+velocity, as it is the "true accceleration formula". (Gibbs, 1996).
+
+For these calculations to be accurate, we must also assume that the earth is stationary, and that there are no other existing significant
+gravitational masses other than the earth. Additionally, we must ignore gravitational time dilation.
+
+It should also be noted that the dilation values calculated will be approximations calculated by a writen computer simulation. This
+simulation will sum the time dilation across each 1 second interval for the entirety of the journey, which will not yeild a perfect
+result, but the calculated result will be accurate enough for our purposes.
+
+----------------------------------------LINEAR PATH----------------------------------------------------------
+
+When traveling through space with acceleration, there are two possible basic paths that the travelling ship
+can take. One is a linear shape as shown below.
+
+[Diagram]
+
+In this path, the ship will accelerate forward (away from the earth) in a straight line for a time **deltat_1**, then it will begin 
+to decelerate at the same rate opposite to it's velocity for a time **deltat_2** until it reaches a halt. The ship will then 
+accelerate backwards (towards the earth) in a straight line for a time **deltat_3**, and finally, it will decelerate for a time
+**deltat_4** until it reaches a halt at it's starting position (position of the earth).
+
+Given that the acceleration of the ship is constant, it is sufficient to say that **deltat_1 = deltat_2** since the 
+ship must decelerate at the same rate at which it accelerates. Given this, it is also sufficient to say that **deltat_3 = deltat_4**.
+We can also say that **deltad_1 + deltad_2 = deltad_3 + delta d_4** given that the distance traveled to and from the turning point
+must be equal. This means that **deltat_1 + deltat_2 = deltat_3 + deltat_4** meaning: **deltat_1 = deltat_2 = deltat_3 = deltat_4**.
+
+Since the acceleration and deceleration times are all equal: **deltaT_T = 4deltat_1**. 
+
+Since the simulator will calculate the values using a summation technique, the time dilation over an accelerating timeframe will be 
+equal to the time dilation over an equal timeframe decelerating with the same acceleration magnitude. This means that the time dilation
+over the time frame **deltat_1** is equal to the dilation over the other three time frames, thus the simulator will only calculate
+the dilation for the first time frame, and will multiply the result by 4 for the final dilation.
+
+
+----------------------------------------TURNED PATH----------------------------------------------------------
+
+The other option is for the ship to complete a circular turn to change directions. This can be modeled by the 
+diagram below.
+
+[Diagram]
+
+In this path, the ship will accelerate forward (away from the earth) in a straight line for a time **deltat_1**
+
+Using this diagram we can set up the following equation: **deltaT_T = deltat_1 + deltat_2 + deltat_3**.
+
+As shown in the diagram, both **deltad_1** and **deltad_3** are tangent to the circle which models the turn, and pass through
+the same point, being the position of the earth. As such, we can say that **deltat_1 = deltat_3** and **deltad_1 = deltad_3**.
+
+We then get the following equation: **deltaT_T = 2deltat_1 + deltat_2**
+
+We must solve for **deltat_2** in terms of **deltat_1** in order to get a workable equation, so we must set up the following set of 
+equations:
+
+[equations]
+
+Using these equations we can substitute into **deltaT_T = 2deltat_1 + deltat_2** to get our final equation:
+
+[steps]
+
+This gives us the final equation **deltaT_T = 2deltat_1 + cancer**
+
+It is not prossible to isolate for **deltat_1** in this equation, so we will have the computer approximate the value and calculate based
+off that.
+
+For the same reasons stated above, the time dilation over the time frame **deltat_1** is equal to the time dilation over the time frame
+**deltat_3**. Given that the magnitude of velocity over the turn will be equal, we can calculate the time dilation over the time frame
+**deltat_2** without summation. Thus, the simulator will only calculate the time dilation initial time step, then multiply by 2, then 
+it will sum the result with the dilation over the timestep for the turn.
+
+------------------------------------------------SIM RESULT----------------------------------------------------------
+The simulator will use the above approximations for time dilation in each of the scenerios listed above to approximate the optimal
+condition for each scenerio; being the trip time (the time relative to the astronaut) which yeilds an arrival within minutes of the
+end of trump's presidency.
+
+The simulator will provide the following information:
+- The number of seconds between the end of trumps presidency and the arrival of the space ship.
+- The trip time, the total time that the astronaut spends in the ship (relative to him)
+- The total time that the astronaut spends in the ship (relative to people on earth)
+- The total time skipped (the discrepency between the time the astronaut experiences and the time people on earth experience)
