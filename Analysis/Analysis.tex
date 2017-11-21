@@ -88,7 +88,9 @@
 \newcommand{\Del}{\mathrm{\Delta}}
 \newcommand{\lam}{\mathrm{\lambda}}
 
-%\includeonly{Turning}
+\DeclareMathOperator{\arctanh}{arctanh}
+
+\includeonly{BlackHoleStarship}
 \begin{document}
 	\pagenumbering{gobble}
 	\maketitle
@@ -108,8 +110,10 @@
 		\import{Part1/ParadoxSetup/}{ParadoxSetup}
 		\import{Part1/ResolutionSetup/}{ResolutionSetup}
 		\import{Part1/ParadoxResolution/}{ParadoxResolution}
+	\part{Deriving a Real-World Case}\label{part:realWorld}
+		\import{Part2/}{RealWorld}
 	\part{The Great Trump Escape}\label{part:trumpEscape}
-		\import{Part2/Deriving/}{Deriving}
+		\import{Part3/}{TrumpEscape}
 	\appendix
 	\chapter{Simulation source code}\label{appendix:sourceCode}
 		\lstinputlisting[language=Java]{../Simulator/TimeDilationCalc.java}

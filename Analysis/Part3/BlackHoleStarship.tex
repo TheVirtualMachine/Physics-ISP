@@ -1,0 +1,20 @@
+\section{Using a Black Hole Starship}
+	Up until now, the modes of transport have at least been somewhat realistic.
+	Now, we enter the area of theoretical transportation. The details of how a black hole starship functions are outside the scope of this paper (and would add roughly 20 more pages), so we will only cover the basics.
+	
+	In order for a black hole starship to function, a very small black hole must be created.
+	Specifically, the Schwarzschild radius of the black hole (distance from the centre at which light cannot escape the gravitational force) should be about \SI{9e-19}{\metre} \autocite{blackHoleStarship}.
+	This small black hole will be placed at the focal point of a parabolic reflector, which is attached to the starship \autocite{blackHoleStarship}.
+	The black hole will emit a type of energy called Hawking radiation which reflects off the parabolic reflector and propels the ship forward with immense energy.
+	According to \cite{blackHoleStarship}, a proposed system with a black hole of mass \SI{6.06e8}{\kg} should be able to accelerate to \SI{0.1}{\clight} in 20 days. 
+	\input{Figs/BlackHoleStarshipDiagram}
+	As with the space shuttle, we will be calculating acceleration since the black hole starship will be travelling in space.
+	In addition, since the top speed is reasonably close to the speed of light, we must account for time dilation and cannot simply use the kinematics formula for acceleration.
+	Recall from \cite{sracceleration} that:
+	\[v = \si{\clight} \tanh \left(\frac{aT}{\si{\clight}}\right)\]
+	This can be rearranged to solve for acceleration:
+	\begin{align*}
+		a &= \frac{\si{\clight} \arctanh \left(\frac{v}{\si{\clight}}\right)}{T}\\
+		a &= \frac{\SI{299792458}{\metre/\second} \times \arctanh \left(\frac{0.1(\SI{299792458}{\metre/\second})}{\SI{299792458}{\metre/\second}}\right)}{20 \times 24 \times 60 \times 60}\\
+		a &\doteq 17.407
+	\end{align*}
