@@ -10,8 +10,6 @@
 				\item[$T_T$] The total time.
 			\end{description}
 	\subsection{Calculations}
-		First, recall from \cite{sracceleration} that:
-		\[v = \si{\clight} \tanh \left(\frac{aT}{\si{\clight}}\right)\]
 		\begin{samepagecols}{2}
 			\subsubsection{Acceleration distance}
 			\begin{align*}
@@ -57,9 +55,4 @@
 		\end{align*}
 		Trying to solve for $\Del t_1$ will lead us to a world of pain, so instead we will use a computer to solve it.
 
-		This program was written by David White, and the source code is on the following pages:
-		\newpage
-		\lstinputlisting[language=Java]{../../../Simulator/TimeDilationCalc.java}
-		\newpage
-	\subsection{The linear case}
-		\input{Figs/LinearDiagram.tex}
+		The program to solve it was written by David White, and the source code is in appendix \vref{appendix:sourceCode}.

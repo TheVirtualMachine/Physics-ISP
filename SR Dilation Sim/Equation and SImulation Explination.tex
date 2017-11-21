@@ -1,0 +1,45 @@
+----------------------------------------TURNED PATH----------------------------------------------------------
+
+The other option is for the ship to complete a circular turn to change directions. This can be modeled by the 
+diagram below.
+
+[Diagram]
+
+In this path, the ship will accelerate forward (away from the earth) in a straight line for a time **deltat_1**
+
+Using this diagram we can set up the following equation: **deltaT_T = deltat_1 + deltat_2 + deltat_3**.
+
+As shown in the diagram, both **deltad_1** and **deltad_3** are tangent to the circle which models the turn, and pass through
+the same point, being the position of the earth. As such, we can say that **deltat_1 = deltat_3** and **deltad_1 = deltad_3**.
+
+We then get the following equation: **deltaT_T = 2deltat_1 + deltat_2**
+
+We must solve for **deltat_2** in terms of **deltat_1** in order to get a workable equation, so we must set up the following set of 
+equations:
+
+[equations]
+
+Using these equations we can substitute into **deltaT_T = 2deltat_1 + deltat_2** to get our final equation:
+
+[steps]
+
+This gives us the final equation **deltaT_T = 2deltat_1 + cancer**
+
+It is not prossible to isolate for **deltat_1** in this equation, so we will have the computer approximate the value and calculate based
+off that.
+
+For the same reasons stated above, the time dilation over the time frame **deltat_1** is equal to the time dilation over the time frame
+**deltat_3**. Given that the magnitude of velocity over the turn will be equal, we can calculate the time dilation over the time frame
+**deltat_2** without summation. Thus, the simulator will only calculate the time dilation initial time step, then multiply by 2, then 
+it will sum the result with the dilation over the timestep for the turn.
+
+------------------------------------------------SIM RESULT----------------------------------------------------------
+The simulator will use the above approximations for time dilation in each of the scenerios listed above to approximate the optimal
+condition for each scenerio; being the trip time (the time relative to the astronaut) which yeilds an arrival within minutes of the
+end of trump's presidency.
+
+The simulator will provide the following information:
+- The number of seconds between the end of trumps presidency and the arrival of the space ship.
+- The trip time, the total time that the astronaut spends in the ship (relative to him)
+- The total time that the astronaut spends in the ship (relative to people on earth)
+- The total time skipped (the discrepency between the time the astronaut experiences and the time people on earth experience)
