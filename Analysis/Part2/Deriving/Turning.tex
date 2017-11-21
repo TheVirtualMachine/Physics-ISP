@@ -1,0 +1,58 @@
+\section{Turning}
+	\subsection{Setup}
+		\input{Figs/TurningDiagram}
+		\[\Del t_1 = \Del t_3\]
+		\[\Del d_1 = \Del d_3\]
+		\subsubsection{Known values}
+			\begin{description}
+				\item[$a$] The acceleration.
+				\item[\si{\clight}] The speed of light.
+				\item[$T_T$] The total time.
+			\end{description}
+	\subsection{Calculations}
+		First, recall from \cite{sracceleration} that:
+		\[v = \si{\clight} \tanh \left(\frac{aT}{\si{\clight}}\right)\]
+		\begin{samepagecols}{2}
+			\subsubsection{Acceleration distance}
+			\begin{align*}
+				v &= \si{\clight}\tanh\left(\frac{at}{\si{\clight}}\right)\\
+				v_t &= \si{\clight}\tanh\left(\frac{a \Del t_1}{\si{\clight}}\right)\\
+				\Del d_1 &= \int \si{\clight}\tanh\left(\frac{a \Del t_1}{\si{\clight}}\right) \dif \Del t_1\\
+				\Del d_1 &= \int \frac{\si{\clight}}{a} \times \frac{\sinh\left(\frac{a \Del t_1}{\si{\clight}}\right)}{\cosh\left(\frac{a \Del t_1}{\si{\clight}}\right)} \dif \Del t_1\\
+				\Del d_1 &= \frac{\si{\clight}^2}{a} \int \frac{1}{\frac{\sinh\left(\frac{a \Del t_1}{\si{\clight}}\right)}{\cosh\left(\frac{a \Del t_1}{\si{\clight}}\right)}} \dif \Del t_1\\
+				\Del d_1 &= \frac{\si{\clight}^2}{a} \ln\left| \cosh\left(\frac{1 \Del t_1}{\si{\clight}}\right)\right|\\
+				&\frac{a \Del t_1}{\si{\clight}} > 0 \implies \cosh > 0\\
+				\Del d_1 &= \frac{\si{\clight}^2}{a} \ln\left(\cosh\left(\frac{1 \Del t_1}{\si{\clight}}\right)\right)
+			\end{align*}
+			\columnbreak
+			\subsubsection{Turn distance}
+				\begin{align*}
+					\tan \theta &= \frac{\Del d_1}{r}\\
+					\theta &= \arctan\left(\frac{\Del d_1}{r}\right)
+				\end{align*}
+				\begin{equation*}
+					\phi = 2\pi - 2\theta
+				\end{equation*}
+				\begin{equation*}
+					\Del d_2 = \phi r
+				\end{equation*}
+			\subsubsection{Turn time}
+				\begin{equation*}
+					\Del t_2 = \frac{\Del d_2}{v_t}
+				\end{equation*}
+			\subsubsection{Turn radius}
+				\begin{equation*}
+					a = \frac{v^2}{r} \qquad r = \frac{v^2}{a}
+				\end{equation*}
+		\end{samepagecols}
+	\newpage
+	\subsection{The total time}
+		\[\Del t_1 = \Del t_3\]
+		\begin{align*}
+			\Del T_T &= \Del t_1 + \Del t_2 + \Del t_s\\
+			\Del T_T &= 2\Del t_1 + \Del t_2\\
+			\Del T_T &= 2\Del t_1 + \frac{\left(2\pi - 2\arctan\left(\frac{\Del d_1}{r}\right)\right) \frac{v^2}{a}}{v}\\
+			\Del T_T &= 2\Del t_1+\frac{\left(2\pi - 2\arctan\left(\frac{\frac{\si{\clight}^2}{a}\ln\left(\cosh\left(\frac{a\Del t_1}{c}\right)\right)}{\frac{v^2}{a}}\right)\right) v}{a}\\
+			\Del T_T &= 2\Del t_1+\frac{2\pi-2\arctan\left(\frac{\si{\clight}^2\ln\left(\cosh\left(\frac{a\Del t_1}{\si{\clight}}\right)\right)}{\left(\si{\clight}\tanh\left(\frac{a\Del t_1}{\si{\clight}}\right)\right)^2}\right) \times \si{\clight}\tanh\left(\frac{a\Del t_1}{\si{\clight}}\right)}{a}
+		\end{align*}
+		Trying to solve for $\Del t_1$ will lead us to a world of pain, so instead we will use a computer to solve it.

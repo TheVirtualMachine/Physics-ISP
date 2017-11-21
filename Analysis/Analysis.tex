@@ -12,14 +12,18 @@
 \usepackage[backend=biber,style=apa]{biblatex}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{commath}
 \usepackage{siunitx}
 \usepackage{tikz}
+\usepackage{tkz-euclide}
 \usepackage{pgfplots}
 \usepackage{titlesec}
 \usepackage[hidelinks]{hyperref}
 
-\titlespacing*{\chapter}{0pt}{-25pt}{20pt}
-\titleformat{\chapter}[display]{\Huge\bfseries}{\chaptertitlename{} \thechapter}{10pt}{\LARGE}
+\usetkzobj{all}     
+
+\titlespacing*{\chapter}{0pt}{-30pt}{20pt}
+\titleformat{\chapter}[display]{\Huge\bfseries}{\chaptertitlename{} \thechapter}{5pt}{\LARGE}
 
 \setlength{\columnsep}{1cm}
 \setlength{\columnseprule}{1pt}
@@ -66,10 +70,17 @@
 \newcommand{\Del}{\mathrm{\Delta}}
 \newcommand{\lam}{\mathrm{\lambda}}
 
-%\includeonly{ParadoxSolution}
+\includeonly{Turning}
 \begin{document}
 	\pagenumbering{gobble}
 	\maketitle
+	\vspace*{\fill}
+		\begin{center}
+			\large
+			\textit{For Mr. Bouttell. You asked for rigorous. Here it is.}
+		\end{center}
+	\vspace*{\fill}
+	\clearpage
 	\pagenumbering{roman}
 	\include{Abstract}
 	\tableofcontents
@@ -79,6 +90,8 @@
 		\import{Part1/ParadoxSetup/}{ParadoxSetup}
 		\import{Part1/ResolutionSetup/}{ResolutionSetup}
 		\import{Part1/ParadoxResolution/}{ParadoxResolution}
+	\part{The Great Trump Escape}\label{part:trumpEscape}
+		\import{Part2/Deriving/}{Deriving}
 	\nocite{*}
 	\printbibliography
 \end{document}
