@@ -57,14 +57,23 @@
 		Using these equations we can substitute into $\Del T_T = 2\Del t_1 + \Del t_2$ to get our final equation in subsection \vref{subsec:disgusting}.
 	\subsection{The total time}\label{subsec:disgusting}
 		\[\Del t_1 = \Del t_3\]
-		\begin{align*}
-			\Del T_T &= \Del t_1 + \Del t_2 + \Del t_s\\
-			\Del T_T &= 2\Del t_1 + \Del t_2\\
-			\Del T_T &= 2\Del t_1 + \frac{\left(2\pi - 2\arctan\left(\frac{\Del d_1}{r}\right)\right) \frac{v^2}{a}}{v}\\
-			\Del T_T &= 2\Del t_1+\frac{\left(2\pi - 2\arctan\left(\frac{\frac{\si{\clight}^2}{a}\ln\left(\cosh\left(\frac{a\Del t_1}{\si{\clight}}\right)\right)}{\frac{v^2}{a}}\right)\right) v}{a}\\
-			\Del T_T &= 2\Del t_1+\frac{\left(2\pi-2\arctan\left(\frac{\si{\clight}^2\ln\left(\cosh\left(\frac{a\Del t_1}{\si{\clight}}\right)\right)}{\left(\si{\clight}\tanh\left(\frac{a\Del t_1}{\si{\clight}}\right)\right)^2}\right)\right) \times \si{\clight}\tanh\left(\frac{a\Del t_1}{\si{\clight}}\right)}{a}
-		\end{align*}
-		Trying to solve for $\Del t_1$ will lead us to a world of pain, so instead we will use a computer to solve it.
+		\begin{align}
+			\Del T_T &= \Del t_1 + \Del t_2 + \Del t_s\nonumber\\
+			\Del T_T &= 2\Del t_1 + \Del t_2\nonumber\\
+			\Del T_T &= 2\Del t_1 + \frac{\left(2\pi - 2\arctan\left(\frac{\Del d_1}{r}\right)\right) \frac{v^2}{a}}{v}\nonumber\\
+			\Del T_T &= 2\Del t_1+\frac{\left(2\pi - 2\arctan\left(\frac{\frac{\si{\clight}^2}{a}\ln\left(\cosh\left(\frac{a\Del t_1}{\si{\clight}}\right)\right)}{\frac{v^2}{a}}\right)\right) v}{a}\nonumber\\
+			\Del T_T &= 2\Del t_1+\frac{\left(2\pi-2\arctan\left(\frac{\si{\clight}^2\ln\left(\cosh\left(\frac{a\Del t_1}{\si{\clight}}\right)\right)}{\left(\si{\clight}\tanh\left(\frac{a\Del t_1}{\si{\clight}}\right)\right)^2}\right)\right) \times \si{\clight}\tanh\left(\frac{a\Del t_1}{\si{\clight}}\right)}{a}\nonumber\\
+			\Del T_T &= 2\Del t_1+\frac{\left(2\pi-2\arctan\left(\frac{\ln\left(\cosh\left(\frac{a\Del t_1}{\si{\clight}}\right)\right)}{\left(\tanh\left(\frac{a\Del t_1}{\si{\clight}}\right)\right)^2}\right)\right) \times \si{\clight}\tanh\left(\frac{a\Del t_1}{\si{\clight}}\right)}{a}\label{eq:disgusting}
+		\end{align}
+		This gives us the final equation \eqref{eq:disgusting}.
+
+		It is not possible to isolate for $\Del t_1$ in this equation, so we will have the computer approximate the value and calculate based
+		off that.
+
+		For the same reasons stated above, the time dilation over the time frame $\Del t_1$ is equal to the time dilation over the time frame
+		$\Del t_3$. Given that the magnitude of velocity over the turn will be equal, we can calculate the time dilation over the time frame
+		$\Del t_2$ without summation. Thus, the simulator will only calculate the time dilation initial time step, then multiply by 2, then 
+		it will sum the result with the dilation over the time step for the turn.
 
 		The program to solve it was written by David White, and the source code is in appendix \vref{appendix:sourceCode}.
 
