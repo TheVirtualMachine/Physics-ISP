@@ -1,26 +1,25 @@
-import java.util.ArrayList;
 import java.util.Scanner;
 
+//Java class which approximates time dilation for certain special relativity cases using a summation technique
 public class TimeDilationCalc
 {
-    final int TOTAL_TIME = 99779400;
-    //final int TOTAL_TIME = 8*365*24*60*60;
-    final double C = 299792458;
-    final double C_SQ = C*C;
-    final double PI2 = Math.PI*2;
-    final int acceptableError = 5;
+    final int TOTAL_TIME = 99779400; //The desired time elapsed for the observer
+    final int C = 299792458; //The speed of light, constant
+    final long C_SQ = C*C; //The speed of light squared, used to save calculations while simulating
+    final double PI2 = Math.PI*2; //2 times the value of PI, usedd to save calculations while simulating
+    final int acceptableError = 5; //How much error is acceptable when approximating delta t 1 for turning case
     
-    double acceleration;
-    double cSqOverAccel;
-    int arrivalTimeMargin = 10;
-    
-    Scanner s;
+    double acceleration;//The acceleration of the ship inputted by the user
+    double cSqOverAccel;//Speed of light squared divided by acceleration, pre calculated to save time when simulating
+
+    Scanner s;//Scanner class to read input
     
     public TimeDilationCalc ()
     {
 	s = new Scanner (System.in);
     }
     
+    //User input to get acceleration + calculate sSqOverAccel
     public void getSimData ()
     {
 	System.out.print("Enter ship acceleration: ");
@@ -28,11 +27,13 @@ public class TimeDilationCalc
 	cSqOverAccel = C_SQ/acceleration;
     }
     
+    //Calculates velocity for a given acceleration time using the proper acceleration formula
     public double velocity (int accelTime)
     {
 	return C*Math.tanh(acceleration*accelTime/C);
     }
     
+    //Approximates how much time the ship will spend turning around for a given time spend accelerating
     public double turnTime (int accelTime)
     {
 	double accelTimeOverC = acceleration*accelTime/C;
@@ -48,6 +49,7 @@ public class TimeDilationCalc
 	return turnTime;
     }
     
+    //Approximates how much time the ship should spend accelerating so that the trip lasts for the number of seconds given by tripTime
     public int findAccelTime (int tripTime)
     {
 	int accelTime = 0;
@@ -62,6 +64,7 @@ public class TimeDilationCalc
 	return accelTime;
     }
     
+    //Approximates the amount of time elapsed for an observer given a specified trip time for a turned path.
     public double getObserverTimeTurning (int tripTime)
     {
 	double observerTime = 0;
@@ -76,6 +79,7 @@ public class TimeDilationCalc
 	return observerTime;
     }
     
+    //Approximates the amount of time elapsed for an observer given a specified trip time for a linear path.
     public double getObserverTimeStraight(int tripTime)
     {
 	double observerTime = 0;
@@ -88,6 +92,7 @@ public class TimeDilationCalc
 	return observerTime;
     }
     
+    //Calculates time elapsed for an observer for the given velocity over the given time
     public double getDilatedTime (double passengerTime, double passengerVelocity)
     {
 	double dilatedTime = Math.pow(passengerVelocity, 2);
@@ -98,24 +103,8 @@ public class TimeDilationCalc
 	return dilatedTime;
     }
     
+    //Approximates how much time must pass for the passenger so that the oberver experiences the time specified by TOTAL_TIME. This is for a turned path.
     public void optimumTurnTime ()
-    {
-	int tripTime = TOTAL_TIME;
-	double dilatedTime = getObserverTimeTurning(tripTime);
-	double diff = dilatedTime - TOTAL_TIME;
-	while (Math.abs(diff) > arrivalTimeMargin || diff <= 0)
-	{
-	   tripTime -= diff;
-	   dilatedTime = getObserverTimeTurning(tripTime);
-	   diff = dilatedTime - TOTAL_TIME;
-	   System.out.println("difference: " + Math.round(diff));
-	}
-	System.out.println("difference: " + Math.round(dilatedTime - TOTAL_TIME));
-	System.out.println(tripTime);
-	System.out.println(dilatedTime);
-    }
-    
-    public void optimumTurnTime2 ()
     {
 	System.out.println();
 	System.out.println("-------------");
@@ -137,7 +126,6 @@ public class TimeDilationCalc
 		dilatedTime = getObserverTimeTurning(tripTime);
 		diff = dilatedTime - TOTAL_TIME;
 		System.out.print(".");
-		//System.out.println("difference: " + Math.round(diff));
 	    }
 	}
 	System.out.println();
@@ -148,24 +136,8 @@ public class TimeDilationCalc
 	System.out.println("Time Skipped: " + (dilatedTime - tripTime));
     }
     
+    //Approximates how much time must pass for the passenger so that the oberver experiences the time specified by TOTAL_TIME. This is for a straight path.
     public void optimumStraightTime ()
-    {
-	int tripTime = TOTAL_TIME;
-	double dilatedTime = getObserverTimeTurning(tripTime);
-	double diff = dilatedTime - TOTAL_TIME;
-	while (Math.abs(diff) > arrivalTimeMargin || diff <= 0)
-	{
-	   tripTime -= diff;
-	   dilatedTime = getObserverTimeStraight(tripTime);
-	   diff = dilatedTime - TOTAL_TIME;
-	   System.out.println("difference: " + Math.round(diff));
-	}
-	System.out.println("difference: " + Math.round(dilatedTime - TOTAL_TIME));
-	System.out.println(tripTime);
-	System.out.println(dilatedTime);
-    }
-    
-    public void optimumStraightTime2 ()
     {
 	System.out.println();
 	System.out.println("---------------");
@@ -187,7 +159,6 @@ public class TimeDilationCalc
 		dilatedTime = getObserverTimeStraight(tripTime);
 		diff = dilatedTime - TOTAL_TIME;
 		System.out.print(".");
-		//System.out.println("difference: " + Math.round(diff));
 	    }
 	}
 	System.out.println();
@@ -197,22 +168,13 @@ public class TimeDilationCalc
 	System.out.println("Earth Time Elapsed: " + dilatedTime);
 	System.out.println("Time Skipped: " + (dilatedTime - tripTime));
     }
-    
-    public void thing ()
-    {
-	double num = s.nextDouble();
-	num = Math.log10(num);
-	num = Math.ceil(num);
-	System.out.println(num);
-    }
 
     public static void main(String[] args)
     {
 	TimeDilationCalc t = new TimeDilationCalc();
-	//t.thing();
 	t.getSimData();
-	t.optimumTurnTime2();
-	t.optimumStraightTime2();
+	t.optimumTurnTime();
+	t.optimumStraightTime();
 	System.exit(0);
     }
 }
