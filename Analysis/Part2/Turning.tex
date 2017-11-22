@@ -1,15 +1,26 @@
 \section{Turning}
 	\subsection{Setup}
+		The other option is for the ship to complete a circular turn to change directions.
+		This can be modelled by the diagram below.
 		\input{Figs/TurningDiagram}
-		\[\Del t_1 = \Del t_3\]
-		\[\Del d_1 = \Del d_3\]
+		In this path, the ship will accelerate forward (away from the earth) in a straight line for a time $\Del t_1$.
+
+		Using this diagram we can set up the following equation: $\Del T_T = \Del t_1 + \Del t_2 + \Del t_3$.
+
+		As shown in the diagram, both $\Del d_1$ and $\Del d_3$ are tangent to the circle which models the turn, and pass through the same point, being the position of the earth.
+		As such, we can say that $\Del t_1 = \Del t_3$ and $\Del d_1 = \Del d_3$.
+
+		We then get the following equation: $\Del T_T = 2\Del t_1 + \Del t_2$.
+
+		We must solve for $\Del t_2$ in terms of $\Del t_1$ in order to get a workable equation, so we must set up the following set of 
+		equations:
+	\subsection{Equations}
 		\subsubsection{Known values}
 			\begin{description}
 				\item[$a$] The acceleration.
 				\item[\si{\clight}] The speed of light.
 				\item[$T_T$] The total time.
 			\end{description}
-	\subsection{Calculations}
 		\begin{samepagecols}{2}
 			\subsubsection{Acceleration distance}
 			\begin{align*}
@@ -18,9 +29,9 @@
 				\Del d_1 &= \int \si{\clight}\tanh\left(\frac{a \Del t_1}{\si{\clight}}\right) \dif \Del t_1\\
 				\Del d_1 &= \int \frac{\si{\clight}}{a} \times \frac{\sinh\left(\frac{a \Del t_1}{\si{\clight}}\right)}{\cosh\left(\frac{a \Del t_1}{\si{\clight}}\right)} \dif \Del t_1\\
 				\Del d_1 &= \frac{\si{\clight}^2}{a} \int \frac{1}{\frac{\sinh\left(\frac{a \Del t_1}{\si{\clight}}\right)}{\cosh\left(\frac{a \Del t_1}{\si{\clight}}\right)}} \dif \Del t_1\\
-				\Del d_1 &= \frac{\si{\clight}^2}{a} \ln\left| \cosh\left(\frac{1 \Del t_1}{\si{\clight}}\right)\right|\\
+				\Del d_1 &= \frac{\si{\clight}^2}{a} \ln\left| \cosh\left(\frac{\si{\clight} \Del t_1}{\si{\clight}}\right)\right|\\
 				&\frac{a \Del t_1}{\si{\clight}} > 0 \implies \cosh > 0\\
-				\Del d_1 &= \frac{\si{\clight}^2}{a} \ln\left(\cosh\left(\frac{1 \Del t_1}{\si{\clight}}\right)\right)
+				\Del d_1 &= \frac{\si{\clight}^2}{a} \ln\left(\cosh\left(\frac{\si{\clight} \Del t_1}{\si{\clight}}\right)\right)
 			\end{align*}
 			\columnbreak
 			\subsubsection{Turn distance}
@@ -43,8 +54,8 @@
 					a = \frac{v^2}{r} \qquad r = \frac{v^2}{a}
 				\end{equation*}
 		\end{samepagecols}
-	\newpage
-	\subsection{The total time}
+		Using these equations we can substitute into $\Del T_T = 2\Del t_1 + \Del t_2$ to get our final equation in subsection \vref{subsec:disgusting}.
+	\subsection{The total time}\label{subsec:disgusting}
 		\[\Del t_1 = \Del t_3\]
 		\begin{align*}
 			\Del T_T &= \Del t_1 + \Del t_2 + \Del t_s\\
@@ -56,3 +67,15 @@
 		Trying to solve for $\Del t_1$ will lead us to a world of pain, so instead we will use a computer to solve it.
 
 		The program to solve it was written by David White, and the source code is in appendix \vref{appendix:sourceCode}.
+
+		The simulator will use the above approximations for time dilation in each of the scenarios listed above to approximate the optimal
+		condition for each scenario; being the trip time (the time relative to Alice) which yields an arrival within minutes of the
+		end of Trump's presidency.
+
+		The simulator will provide the following information:
+		\begin{itemize}
+			\item The number of seconds between the end of trumps presidency and the arrival of the space ship.
+			\item The trip time, the total time that the astronaut spends in the ship (relative to him).
+			\item The total time that the astronaut spends in the ship (relative to people on earth).
+			\item The total time skipped (the discrepancy between the time the astronaut experiences and the time people on earth experience).
+		\end{itemize}
