@@ -12,6 +12,12 @@
 	In addition, since the top speed is reasonably close to the speed of light, we must account for time dilation and cannot simply use the kinematics formula for acceleration.
 	Recall from \cite{sracceleration} that:
 	\[v = \si{\clight} \tanh \left(\frac{aT}{\si{\clight}}\right)\]
+
+	And recall our known values:
+	\[\si{\clight} = \SI{299792458}{\metre/\second}\]
+	\[v = \SI{0.1}{\clight}\]
+	\[T = 20\,\text{days}\]
+
 	This can be rearranged to solve for acceleration:
 	\begin{align*}
 		a &= \frac{\si{\clight} \arctanh \left(\frac{v}{\si{\clight}}\right)}{T}\\
