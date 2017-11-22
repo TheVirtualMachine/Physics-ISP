@@ -1,0 +1,24 @@
+\section{Running}
+	To test the feasibility of running as a mode of transport, we will be calculating how much of Donald’s presidency Alice can miss if she is running throughout the entire term. To find time skipped, we must find the difference of $\Del t_D$ and $\Del t_A$.
+
+	Recall from the textbook \autocite{textbook} that:
+	\[\Del t_D = \frac{\Del t_A}{\sqrt{1 - \frac{v^2}{\si{\clight}^2}}}\]
+
+	First, we rearrange to solve for $\Del t_A$:
+	\[\Del t_A = \Del t_D \sqrt{1 - \frac{v^2}{\si{\clight}^2}}\]
+
+	Next, we can find the time skipped by subtracting the two values for elapsed time:
+	\[\Del t_S = \Del t_D - \Del t_A\]
+	\[\Del t_S = \Del t_D - \Del t_D\sqrt{1 - \frac{v^2}{\si{\clight}^2}}\]
+
+	Now, we can simply plug in the known values to calculate the amount of time skipped:
+
+	\[\Del t_D = \text{Time remaining in Donald's presidency as of November 22, 2017} = \SI{99779400}{\second}\]
+	\[v = \text{Speed of Alice running} = \SI{10.44}{\metre/\second}\]
+	\[\si{\clight} = \SI{299792458}{\metre/\second}\]
+
+	\begin{align*}
+		\Del t_S &= \num{99619200} - \num{99619200} \sqrt {1- \frac{10.44^2}{299792458^2}}\\
+		\Del t_S &= \SI{5.9605e-8}{\second}
+	\end{align*}
+	As shown, even after more than three years of running at the highest speed humans can go, the amount of time skipped is almost completely negligible. Clearly, this mode of transportation is not practical for achieving Alice's goal of skipping the presidency.
